@@ -1,0 +1,163 @@
+body {
+    background-image: url(background-for-site.png);
+    background-color: black;
+    background-size: cover;
+    color: rgb(207, 207, 207);
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    width: 100%;
+}
+
+.top {
+    display: flex;
+    padding: 8px;
+    background-color: rgb(20, 20, 20);
+    justify-content: space-between;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-left: 2px solid rgb(49, 49, 49);
+    border-bottom: 2px solid rgb(49, 49, 49);
+    border-right: 2px solid rgb(49, 49, 49);
+}
+
+.left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profPick {
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.github {
+    text-decoration: none;
+    color: rgb(207, 207, 207);
+}
+
+.horejsek {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20%;
+    padding-right: 20%;
+    color: rgb(250, 250, 250);
+}
+
+.horejsek a {
+    color: rgb(200, 200, 200);
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nadpis {
+    font-size: 45px;
+    color: white;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8%;
+}
+
+.speedcube {
+    height: 200px;
+    width: 300px;
+    border-radius: 30%;
+}
+
+.basket {
+    height: 200px;
+    border-radius: 30%;
+}
+
+.stred {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hobbys {
+    display: flex;
+    gap: 50px;
+}
+
+.karate, .kytara, .hry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text-hobby {
+    width: 150px;
+}
+
+.karate-img {
+    height: 275px;
+    border-radius: 50%;
+}
+
+.kytara-img {
+    height: 275px;
+    border-radius: 50%;
+}
+
+.hry-img {
+    height: 275px;
+    border-radius: 50%;
+}
+
+.spodek {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.spodek ul li a {
+    color: rgb(250, 250, 250)
+}
+
+.spodek ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    color: rgb(207, 207, 207);
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-top: 20px;
+    background-color: rgb(20, 20, 20);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-left: 2px solid rgb(49, 49, 49);
+    border-top: 2px solid rgb(49, 49, 49);
+    border-right: 2px solid rgb(49, 49, 49);
+}
+
+.bottom  a{
+    color: rgb(207, 207, 207);
+    font-size: 10px;
+}
