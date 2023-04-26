@@ -71,6 +71,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
     gap: 8%;
 }
 
@@ -78,6 +80,7 @@ body {
     height: 200px;
     width: 300px;
     border-radius: 30%;
+    margin-bottom: 20px;
 }
 
 .basket {
@@ -94,7 +97,11 @@ body {
 
 .hobbys {
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     gap: 50px;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .karate, .kytara, .hry {
