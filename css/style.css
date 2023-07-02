@@ -181,6 +181,10 @@ body {
     border-radius: 40px;
 }
 
+.siteDescribeFullPreview {
+    color: white;
+}
+
 .siteOpenButton {
     height: 30px;
     border-radius: 20px;
