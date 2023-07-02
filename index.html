@@ -57,27 +57,41 @@
         <div class="spodek">
             <p class="nadpis">All of my work:</p>
             <div class="website">
-                <button class="site"><a href="https://f0xy3u.github.io/odin-recipes/">
-                    <img src="./images/site-first_html.png" alt="" class="sitePrewiev">
-                    <p class="siteDescribe">My first site was a recipe site, which was a task from The Odin Project and was THE place, where I wrote the first real site in html. Later, I added some simple CSS.</p>
-                </a></button>
-                <button class="site"><a href="https://f0xy3u.github.io/Landing-page/">
-                    <img src="./images/site-Landing_page.png" alt="" class="sitePrewiev">
-                    <p class="siteDescribe">My second site was again a task from The Odin Project. This was after I took a whole lesson about CSS. If you want, I recommend you to click the "More here" button, which is down on the site.</p>
-                </a></button>
-                <button class="site"><a href="https://f0xy3u.github.io/Stranka-z-nudy/">
-                    <img src="./images/site-Stranka_z_nudy.png" alt="" class="sitePrewiev">
-                    <p class="siteDescribe">This is one of the many sites, that I did when I was bored. Actually, site, that you are reading right now was one of them.</p>
-                </a></button>
-                <button class="site"><a href="https://f0xy3u.github.io/Rock-Paper-Scissors/">
-                    <img src="./images/RPS.png" alt="" class="sitePrewiev">
-                    <p class="siteDescribe">This RPS game was also a project from The Odin Project, which i was doing for a long time, because i wanted it to be exactly, how i like it. This was probably the first project with big using of JavaScript.</p>
-                </a></button>
-                <button class="site"><a href="https://f0xy3u.github.io/Etch-a-sketch/">
-                    <img src="./images/Etch-a-sketch.png" alt="" class="sitePrewiev">
-                    <p class="siteDescribe">This Etch-a-sketch website was just another project from The Odin Project, which is actually really good and i am proud of myself for creating it. Etch-a-sketch was another project, that was done for  JavaScript.</p>
-                </a></button>
+                <img src="./images/site-first_html.png" alt="" class="sitePrewiev siteFiveImg">
+                <img src="./images/site-Landing_page.png" alt="" class="sitePrewiev siteFourImg">
+                <img src="./images/site-Stranka_z_nudy.png" alt="" class="sitePrewiev siteThreeImg">
+                <img src="./images/RPS.png" alt="" class="sitePrewiev siteTwoImg">
+                <img src="./images/Etch-a-sketch.png" alt="" class="sitePrewiev siteOneImg">
+
+                <div class="fullSitePreview">
+                    <div class="siteOne actualSitePreview" style="display: none;">
+                        <img src="./images/Etch-a-sketch.png" alt="" class="fullSitePreviewIMG">
+                        <p class="siteDescribeFullPreview">This Etch-a-sketch website was just another project from The Odin Project, which is actually really good and i am proud of myself for creating it. Etch-a-sketch was another project, that was done for  JavaScript.</p>
+                        <button class="siteOpenButton"><a href="https://f0xy3u.github.io/Etch-a-sketch/" class="siteOpenText">Open this site</a></button>
+                    </div>
+                    <div class="siteTwo actualSitePreview" style="display: none;">
+                        <img src="./images/RPS.png" alt="" class="fullSitePreviewIMG">
+                        <p class="siteDescribeFullPreview">This RPS game was also a project from The Odin Project, which i was doing for a long time, because i wanted it to be exactly, how i like it. This was probably the first project with big using of JavaScript.</p>
+                        <button class="siteOpenButton"><a href="https://f0xy3u.github.io/Rock-Paper-Scissors/" class="siteOpenText">Open this site</a></button>
+                    </div>
+                    <div class="siteThree actualSitePreview" style="display: none;">
+                        <img src="./images/site-Stranka_z_nudy.png" alt="" class="fullSitePreviewIMG">
+                        <p class="siteDescribeFullPreview">This is one of the many sites, that I did when I was bored. Actually, site, that you are reading right now was one of them.</p>
+                        <button class="siteOpenButton"><a href="https://f0xy3u.github.io/Stranka-z-nudy/" class="siteOpenText">Open this site</a></button>
+                    </div>
+                    <div class="siteFour actualSitePreview" style="display: none;">
+                        <img src="./images/site-Landing_page.png" alt="" class="fullSitePreviewIMG">
+                        <p class="siteDescribeFullPreview">My second site was again a task from The Odin Project. This was after I took a whole lesson about CSS. If you want, I recommend you to click the "More here" button, which is down on the site.</p>
+                        <button class="siteOpenButton"><a href="https://f0xy3u.github.io/Landing-page/" class="siteOpenText">Open this site</a></button>
+                    </div>
+                    <div class="siteFive actualSitePreview" style="display: none;">
+                        <img src="./images/site-first_html.png" alt="" class="fullSitePreviewIMG">
+                        <p class="siteDescribeFullPreview">This is one of the many sites, that I did when I was bored. Actually, site, that you are reading right now was one of them.</p>
+                        <button class="siteOpenButton"><a href="https://f0xy3u.github.io/odin-recipes/" class="siteOpenText">Open this site</a></button>
+                    </div>
+                </div>
             </div>
+            
         </div>
     </div>
     <div class="bottom">
@@ -86,7 +100,161 @@
     </div>
 
     <script>
-        
+        const fullSiteBookshelf = document.querySelector('.spodek')
+        const siteOneImg = document.querySelector('.siteOneImg')
+        const siteTwoImg = document.querySelector('.siteTwoImg')
+        const siteThreeImg = document.querySelector('.siteThreeImg')
+        const siteFourImg = document.querySelector('.siteFourImg')
+        const siteFiveImg = document.querySelector('.siteFiveImg')
+        const siteOnePreview = document.querySelector('.siteOne')
+        const siteTwoPreview = document.querySelector('.siteTwo')
+        const siteThreePreview = document.querySelector('.siteThree')
+        const siteFourPreview = document.querySelector('.siteFour')
+        const siteFivePreview = document.querySelector('.siteFive')
+
+        function siteOnePreviewCloser() {
+            fullSiteBookshelf.removeEventListener('click', siteOnePreviewCloser)
+            siteOnePreview.style.display = 'none'
+            siteOnePreview.style.transform = 'scale(0)'
+            siteOneImg.addEventListener('click', siteOnePreviewOpener)
+            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
+            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
+            siteFourImg.addEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
+            console.log('why am i running')
+        }
+
+        function siteOnePreviewOpener() {
+            event.stopPropagation()
+            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
+            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
+            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
+            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
+            console.log('working also')
+            siteThreePreview.style.display = 'none'
+            siteTwoPreview.style.display = 'none'
+            siteFivePreview.style.display = 'none'
+            siteFourPreview.style.display = 'none'
+            siteOnePreview.style.display = 'flex'
+            fullSiteBookshelf.addEventListener('click', siteOnePreviewCloser)
+        }
+
+
+        function siteTwoPreviewCloser() {
+            fullSiteBookshelf.removeEventListener('click', siteTwoPreviewCloser)
+            siteTwoPreview.style.display = 'none'
+            siteOneImg.addEventListener('click', siteOnePreviewOpener)
+            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
+            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
+            siteFourImg.addEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
+            console.log('why am i running')
+        }
+
+        function siteTwoPreviewOpener() {
+            event.stopPropagation()
+            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
+            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
+            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
+            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
+            console.log('working also')
+            siteOnePreview.style.display = 'none'
+            siteThreePreview.style.display = 'none'
+            siteFivePreview.style.display = 'none'
+            siteFourPreview.style.display = 'none'
+            siteTwoPreview.style.display = 'flex'
+            fullSiteBookshelf.addEventListener('click', siteTwoPreviewCloser)
+        }
+
+
+        function siteThreePreviewCloser() {
+            fullSiteBookshelf.removeEventListener('click', siteThreePreviewCloser)
+            siteThreePreview.style.display = 'none'
+            siteOneImg.addEventListener('click', siteOnePreviewOpener)
+            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
+            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
+            siteFourImg.addEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
+            console.log('why am i running')
+        }
+
+        function siteThreePreviewOpener() {
+            event.stopPropagation()
+            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
+            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
+            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
+            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
+            console.log('working also')
+            siteOnePreview.style.display = 'none'
+            siteTwoPreview.style.display = 'none'
+            siteFivePreview.style.display = 'none'
+            siteFourPreview.style.display = 'none'
+            siteThreePreview.style.display = 'flex'
+            fullSiteBookshelf.addEventListener('click', siteThreePreviewCloser)
+        }
+
+        function siteFourPreviewCloser() {
+            fullSiteBookshelf.removeEventListener('click', siteFourPreviewCloser)
+            siteFourPreview.style.display = 'none'
+            siteOneImg.addEventListener('click', siteOnePreviewOpener)
+            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
+            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
+            siteFourImg.addEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
+            console.log('why am i running')
+        }
+
+        function siteFourPreviewOpener() {
+            event.stopPropagation()
+            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
+            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
+            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
+            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
+            console.log('working also')
+            siteThreePreview.style.display = 'none'
+            siteTwoPreview.style.display = 'none'
+            siteFivePreview.style.display = 'none'
+            siteOnePreview.style.display = 'none'
+            siteFourPreview.style.display = 'flex'
+            fullSiteBookshelf.addEventListener('click', siteFourPreviewCloser)
+        }
+
+        function siteFivePreviewCloser() {
+            fullSiteBookshelf.removeEventListener('click', siteFivePreviewCloser)
+            siteFivePreview.style.display = 'none'
+            siteOneImg.addEventListener('click', siteOnePreviewOpener)
+            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
+            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
+            siteFourImg.addEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
+            console.log('why am i running')
+        }
+
+        function siteFivePreviewOpener() {
+            event.stopPropagation()
+            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
+            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
+            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
+            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
+            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
+            console.log('working also')
+            siteThreePreview.style.display = 'none'
+            siteTwoPreview.style.display = 'none'
+            siteFourPreview.style.display = 'none'
+            siteOnePreview.style.display = 'none'
+            siteFivePreview.style.display = 'flex'
+            fullSiteBookshelf.addEventListener('click', siteFivePreviewCloser)
+        }
+
+        siteOneImg.addEventListener('click', siteOnePreviewOpener)
+        siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
+        siteThreeImg.addEventListener('click', siteThreePreviewOpener)
+        siteFourImg.addEventListener('click', siteFourPreviewOpener)
+        siteFiveImg.addEventListener('click', siteFivePreviewOpener)
     </script>
 
 </body>
