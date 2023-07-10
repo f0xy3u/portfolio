@@ -129,6 +129,16 @@ body {
     border-radius: 50%;
 }
 
+.spodek .nadpis {
+    margin-bottom: 2px;
+}
+
+.podtext {
+    margin-top: 1px;
+    font-size: 10px;
+    font-style: italic;
+}
+
 .website {
     display: flex;
     justify-content: center;
@@ -168,7 +178,7 @@ body {
     background-color: rgba(63, 63, 63, 0.801);
 }
 
-.actualSitePreview p {
+.actualSitePreview .siteDescribeFullPreview {
     text-align: center;
     margin-top: 6px;
     margin-bottom: 0px;
@@ -195,6 +205,12 @@ body {
 .siteOpenButton a {
     text-decoration: none;
     color: rgb(240, 240, 240);
+}
+
+.previewClose {
+    font-size: 10px;
+    font-style: italic;
+    margin: 1px;
 }
 
 .spodek {
