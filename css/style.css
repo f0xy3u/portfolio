@@ -162,7 +162,7 @@ body {
 
 .fullSitePreview {
     position: absolute;
-    bottom: 20px;
+    bottom: center;
     left: center;
     animation: alternate;
     animation-duration: 5s;
@@ -172,7 +172,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 95%;
     border-radius: 40px;
     padding: 5px;
     background-color: rgba(63, 63, 63, 0.801);
@@ -186,8 +186,8 @@ body {
 }
 
 .fullSitePreviewIMG {
-    height: 260px;
-    width: 500px;
+    height: auto;
+    width: 100%;
     border-radius: 40px;
 }
 
