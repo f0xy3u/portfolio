@@ -162,8 +162,9 @@ body {
 
 .fullSitePreview {
     position: absolute;
-    bottom: center;
+    bottom: 200px;
     left: center;
+    right: center;
     animation: alternate;
     animation-duration: 5s;
 }
