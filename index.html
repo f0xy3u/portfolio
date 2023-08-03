@@ -126,11 +126,78 @@
         const siteFourPreview = document.querySelector('.siteFour')
         const siteFivePreview = document.querySelector('.siteFive')
         const siteSixPreview = document.querySelector('.siteSix')
+        const sitePreview = document.querySelector(`.fullSitePreview`)
+
+        let animationThing = 0
+        let opacity = 0
+        let site = undefined
+
+        function openAnimation() {
+            if (animationThing < 40) {
+                opacity += 0.025
+                sitePreview.style.opacity = `${opacity}`
+                animationThing += 1
+                setTimeout(openAnimation, 12.5)
+            } else if (animationThing >= 20) {
+                animationThing = 0
+            }
+        }
+
+        function closeAnimation() {
+            if (animationThing < 25) {
+                opacity -= 0.04
+                sitePreview.style.opacity = `${opacity}`
+                animationThing += 1
+                setTimeout(closeAnimation, 25)
+            } else if (animationThing >= 20) {
+                animationThing = 0
+                if (site == `one`) {
+                    siteOneDisplayChanger()
+                } else if (site == `two`) {
+                    siteTwoDisplayChanger()
+                } else if (site == `three`) {
+                    siteThreeDisplayChanger()
+                } else if (site == `four`) {
+                    siteFourDisplayChanger()
+                } else if (site == `five`) {
+                    siteFiveDisplayChanger()
+                } else if (site == `six`) {
+                    siteSixDisplayChanger()
+                }
+            }
+        }
 
 
+
+        function siteOneDisplayChanger() {
+            siteOnePreview.style.display = `none`
+        }
+        function siteTwoDisplayChanger() {
+            siteTwoPreview.style.display = `none`
+        }
+        function siteThreeDisplayChanger() {
+            siteThreePreview.style.display = `none`
+        }
+        function siteFourDisplayChanger() {
+            siteFourPreview.style.display = `none`
+        }
+        function siteFiveDisplayChanger() {
+            siteFivePreview.style.display = `none`
+        }
+        function siteSixDisplayChanger() {
+            siteSixPreview.style.display = `none`
+        }
+
+        
+        
+        
+        
+        
+        
         function siteOnePreviewCloser() {
+            site = `one`
+            closeAnimation()
             fullSiteBookshelf.removeEventListener('click', siteOnePreviewCloser)
-            siteOnePreview.style.display = 'none'
             siteOneImg.addEventListener('click', siteOnePreviewOpener)
             siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
             siteThreeImg.addEventListener('click', siteThreePreviewOpener)
@@ -148,13 +215,15 @@
             siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
             siteSixImg.removeEventListener('click', siteSixPreviewOpener)
             siteOnePreview.style.display = 'flex'
+            openAnimation()
             fullSiteBookshelf.addEventListener('click', siteOnePreviewCloser)
         }
 
 
         function siteTwoPreviewCloser() {
+            site = `two`
+            closeAnimation()
             fullSiteBookshelf.removeEventListener('click', siteTwoPreviewCloser)
-            siteTwoPreview.style.display = 'none'
             siteOneImg.addEventListener('click', siteOnePreviewOpener)
             siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
             siteThreeImg.addEventListener('click', siteThreePreviewOpener)
@@ -172,13 +241,15 @@
             siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
             siteSixImg.removeEventListener('click', siteSixPreviewOpener)
             siteTwoPreview.style.display = 'flex'
+            openAnimation()
             fullSiteBookshelf.addEventListener('click', siteTwoPreviewCloser)
         }
 
 
         function siteThreePreviewCloser() {
+            site = `three`
+            closeAnimation()
             fullSiteBookshelf.removeEventListener('click', siteThreePreviewCloser)
-            siteThreePreview.style.display = 'none'
             siteOneImg.addEventListener('click', siteOnePreviewOpener)
             siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
             siteThreeImg.addEventListener('click', siteThreePreviewOpener)
@@ -196,12 +267,14 @@
             siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
             siteSixImg.removeEventListener('click', siteSixPreviewOpener)
             siteThreePreview.style.display = 'flex'
+            openAnimation()
             fullSiteBookshelf.addEventListener('click', siteThreePreviewCloser)
         }
 
         function siteFourPreviewCloser() {
+            site = `four`
+            closeAnimation()
             fullSiteBookshelf.removeEventListener('click', siteFourPreviewCloser)
-            siteFourPreview.style.display = 'none'
             siteOneImg.addEventListener('click', siteOnePreviewOpener)
             siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
             siteThreeImg.addEventListener('click', siteThreePreviewOpener)
@@ -219,12 +292,14 @@
             siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
             siteSixImg.removeEventListener('click', siteSixPreviewOpener)
             siteFourPreview.style.display = 'flex'
+            openAnimation()
             fullSiteBookshelf.addEventListener('click', siteFourPreviewCloser)
         }
 
         function siteFivePreviewCloser() {
+            site = `five`
+            closeAnimation()
             fullSiteBookshelf.removeEventListener('click', siteFivePreviewCloser)
-            siteFivePreview.style.display = 'none'
             siteOneImg.addEventListener('click', siteOnePreviewOpener)
             siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
             siteThreeImg.addEventListener('click', siteThreePreviewOpener)
@@ -242,12 +317,14 @@
             siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
             siteSixImg.removeEventListener('click', siteSixPreviewOpener)
             siteFivePreview.style.display = 'flex'
+            openAnimation()
             fullSiteBookshelf.addEventListener('click', siteFivePreviewCloser)
         }
 
         function siteSixPreviewCloser() {
+            site = `six`
+            closeAnimation()
             fullSiteBookshelf.removeEventListener('click', siteSixPreviewCloser)
-            siteSixPreview.style.display = 'none'
             siteOneImg.addEventListener('click', siteOnePreviewOpener)
             siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
             siteThreeImg.addEventListener('click', siteThreePreviewOpener)
@@ -265,6 +342,7 @@
             siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
             siteSixImg.removeEventListener('click', siteSixPreviewOpener)
             siteSixPreview.style.display = 'flex'
+            openAnimation()
             fullSiteBookshelf.addEventListener('click', siteSixPreviewCloser)
         }
 
