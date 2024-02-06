@@ -60,6 +60,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .nadpis {
@@ -76,9 +77,9 @@ body {
     gap: 8%;
 }
 
-.speedcube {
+.palia {
     height: 200px;
-    width: 300px;
+    width: 350px;
     border-radius: 30%;
     margin-bottom: 20px;
 }
@@ -102,12 +103,14 @@ body {
     gap: 50px;
     flex-wrap: wrap;
     align-content: center;
+    text-align: center;
 }
 
 .karate, .kytara, .hry {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 370px;
 }
 
 .text-hobby {
@@ -162,21 +165,31 @@ body {
 
 .fullSitePreview {
     position: absolute;
-    bottom: 200px;
-    left: center;
-    right: center;
+    bottom: 5vh;
     animation: alternate;
     animation-duration: 5s;
+}
+
+@media screen and (max-width: 40.5em) {
+    .fullSitePreview{
+        bottom: 20vh;
+    }
 }
 
 .actualSitePreview {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 95%;
+    width: 60vw;
     border-radius: 40px;
     padding: 5px;
     background-color: rgba(63, 63, 63, 0.801);
+}
+
+@media screen and (max-width: 40.5em) {
+    .actualSitePreview {
+        width: 95vw;
+    }
 }
 
 .actualSitePreview .siteDescribeFullPreview {

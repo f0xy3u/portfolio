@@ -2,7 +2,7 @@
 
 Fox in space (profile picture): AI from padlet.com
 
-Speedcube: Jadson Thomas:https://www.pexels.com/photo/3-by-3-rubik-s-cube-selective-focus-photography-1500610/
+Palia:https://cdn.akamai.steamstatic.com/steam/apps/2707930/header.jpg?t=1702006986
 
 Controller: Garrett Morrow:https://www.pexels.com/cs-cz/foto/cerna-slabe-svetlo-herni-ovladac-herni-konzole-1337247/
 
