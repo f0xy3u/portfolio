@@ -64,6 +64,7 @@
                 <img src="./images/RPS.png" alt="" class="sitePrewiev siteTwoImg">
                 <img src="./images/Etch-a-sketch.png" alt="" class="sitePrewiev siteOneImg">
                 <img src="./images/CalculatorSite.png" alt="" class="sitePrewiev siteSixImg">
+                <img src="./images/SignUpForm.jpg" alt="" class="sitePrewiev siteSevenImg">
 
                 <div class="fullSitePreview">
                     <div class="siteOne actualSitePreview" style="display: none;">
@@ -102,6 +103,22 @@
                         <button class="siteOpenButton"><a href="https://f0xy3u.github.io/Calculator/" class="siteOpenText">Open this site</a></button>
                         <p class="previewClose">click anywhere to exit</p>
                     </div>
+                    <div class="siteSeven actualSitePreview" style="display: none;">
+                        <img src="./images/SignUpForm.jpg" alt="" class="fullSitePreviewIMG">
+                        <p class="siteDescribeFullPreview">nějaký text o projektu</p>
+                        <button class="siteOpenButton"><a href="https://f0xy3u.github.io/SignUpForm/" class="siteOpenText">Open this site</a></button>
+                        <p class="previewClose">click anywhere to exit</p>
+                    </div>
+                    
+                    
+                    <!-- Template na sitePreview
+                        <div class="site[number] actualSitePreview" style="display: none;">
+                            <img src="./images/[site image]" alt="" class="fullSitePreviewIMG">
+                            <p class="siteDescribeFullPreview">nějaký text o projektu</p>
+                            <button class="siteOpenButton"><a href="[url na projekt]" class="siteOpenText">Open this site</a></button>
+                            <p class="previewClose">click anywhere to exit</p>
+                        </div>
+                    -->
                 </div>
             </div>
             
@@ -112,247 +129,7 @@
         <a class="repos" href="https://github.com/f0xy3u/portfolio">Github repository for this project</a>
     </div>
 
-    <script>
-        const fullSiteBookshelf = document.querySelector('.spodek')
-        const siteOneImg = document.querySelector('.siteOneImg')
-        const siteTwoImg = document.querySelector('.siteTwoImg')
-        const siteThreeImg = document.querySelector('.siteThreeImg')
-        const siteFourImg = document.querySelector('.siteFourImg')
-        const siteFiveImg = document.querySelector('.siteFiveImg')
-        const siteSixImg = document.querySelector('.siteSixImg')
-        const siteOnePreview = document.querySelector('.siteOne')
-        const siteTwoPreview = document.querySelector('.siteTwo')
-        const siteThreePreview = document.querySelector('.siteThree')
-        const siteFourPreview = document.querySelector('.siteFour')
-        const siteFivePreview = document.querySelector('.siteFive')
-        const siteSixPreview = document.querySelector('.siteSix')
-        const sitePreview = document.querySelector(`.fullSitePreview`)
-
-        let animationThing = 0
-        let opacity = 0
-        let site = undefined
-
-        function openAnimation() {
-            if (animationThing < 40) {
-                opacity += 0.025
-                sitePreview.style.opacity = `${opacity}`
-                animationThing += 1
-                setTimeout(openAnimation, 12.5)
-            } else if (animationThing >= 20) {
-                animationThing = 0
-            }
-        }
-
-        function closeAnimation() {
-            if (animationThing < 25) {
-                opacity -= 0.04
-                sitePreview.style.opacity = `${opacity}`
-                animationThing += 1
-                setTimeout(closeAnimation, 25)
-            } else if (animationThing >= 20) {
-                animationThing = 0
-                if (site == `one`) {
-                    siteOneDisplayChanger()
-                } else if (site == `two`) {
-                    siteTwoDisplayChanger()
-                } else if (site == `three`) {
-                    siteThreeDisplayChanger()
-                } else if (site == `four`) {
-                    siteFourDisplayChanger()
-                } else if (site == `five`) {
-                    siteFiveDisplayChanger()
-                } else if (site == `six`) {
-                    siteSixDisplayChanger()
-                }
-            }
-        }
-
-
-
-        function siteOneDisplayChanger() {
-            siteOnePreview.style.display = `none`
-        }
-        function siteTwoDisplayChanger() {
-            siteTwoPreview.style.display = `none`
-        }
-        function siteThreeDisplayChanger() {
-            siteThreePreview.style.display = `none`
-        }
-        function siteFourDisplayChanger() {
-            siteFourPreview.style.display = `none`
-        }
-        function siteFiveDisplayChanger() {
-            siteFivePreview.style.display = `none`
-        }
-        function siteSixDisplayChanger() {
-            siteSixPreview.style.display = `none`
-        }
-
-        
-        
-        
-        
-        
-        
-        function siteOnePreviewCloser() {
-            site = `one`
-            closeAnimation()
-            fullSiteBookshelf.removeEventListener('click', siteOnePreviewCloser)
-            siteOneImg.addEventListener('click', siteOnePreviewOpener)
-            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-            siteFourImg.addEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-            siteSixImg.addEventListener('click', siteSixPreviewOpener)
-        }
-
-        function siteOnePreviewOpener() {
-            event.stopPropagation()
-            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
-            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
-            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
-            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
-            siteSixImg.removeEventListener('click', siteSixPreviewOpener)
-            siteOnePreview.style.display = 'flex'
-            openAnimation()
-            fullSiteBookshelf.addEventListener('click', siteOnePreviewCloser)
-        }
-
-
-        function siteTwoPreviewCloser() {
-            site = `two`
-            closeAnimation()
-            fullSiteBookshelf.removeEventListener('click', siteTwoPreviewCloser)
-            siteOneImg.addEventListener('click', siteOnePreviewOpener)
-            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-            siteFourImg.addEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-            siteSixImg.addEventListener('click', siteSixPreviewOpener)
-        }
-
-        function siteTwoPreviewOpener() {
-            event.stopPropagation()
-            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
-            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
-            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
-            siteSixImg.removeEventListener('click', siteSixPreviewOpener)
-            siteTwoPreview.style.display = 'flex'
-            openAnimation()
-            fullSiteBookshelf.addEventListener('click', siteTwoPreviewCloser)
-        }
-
-
-        function siteThreePreviewCloser() {
-            site = `three`
-            closeAnimation()
-            fullSiteBookshelf.removeEventListener('click', siteThreePreviewCloser)
-            siteOneImg.addEventListener('click', siteOnePreviewOpener)
-            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-            siteFourImg.addEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-            siteSixImg.addEventListener('click', siteSixPreviewOpener)
-        }
-
-        function siteThreePreviewOpener() {
-            event.stopPropagation()
-            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
-            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
-            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
-            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
-            siteSixImg.removeEventListener('click', siteSixPreviewOpener)
-            siteThreePreview.style.display = 'flex'
-            openAnimation()
-            fullSiteBookshelf.addEventListener('click', siteThreePreviewCloser)
-        }
-
-        function siteFourPreviewCloser() {
-            site = `four`
-            closeAnimation()
-            fullSiteBookshelf.removeEventListener('click', siteFourPreviewCloser)
-            siteOneImg.addEventListener('click', siteOnePreviewOpener)
-            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-            siteFourImg.addEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-            siteSixImg.addEventListener('click', siteSixPreviewOpener)
-        }
-
-        function siteFourPreviewOpener() {
-            event.stopPropagation()
-            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
-            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
-            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
-            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
-            siteSixImg.removeEventListener('click', siteSixPreviewOpener)
-            siteFourPreview.style.display = 'flex'
-            openAnimation()
-            fullSiteBookshelf.addEventListener('click', siteFourPreviewCloser)
-        }
-
-        function siteFivePreviewCloser() {
-            site = `five`
-            closeAnimation()
-            fullSiteBookshelf.removeEventListener('click', siteFivePreviewCloser)
-            siteOneImg.addEventListener('click', siteOnePreviewOpener)
-            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-            siteFourImg.addEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-            siteSixImg.addEventListener('click', siteSixPreviewOpener)
-        }
-
-        function siteFivePreviewOpener() {
-            event.stopPropagation()
-            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
-            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
-            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
-            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
-            siteSixImg.removeEventListener('click', siteSixPreviewOpener)
-            siteFivePreview.style.display = 'flex'
-            openAnimation()
-            fullSiteBookshelf.addEventListener('click', siteFivePreviewCloser)
-        }
-
-        function siteSixPreviewCloser() {
-            site = `six`
-            closeAnimation()
-            fullSiteBookshelf.removeEventListener('click', siteSixPreviewCloser)
-            siteOneImg.addEventListener('click', siteOnePreviewOpener)
-            siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-            siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-            siteFourImg.addEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-            siteSixImg.addEventListener('click', siteSixPreviewOpener)
-        }
-
-        function siteSixPreviewOpener() {
-            event.stopPropagation()
-            siteOneImg.removeEventListener('click', siteOnePreviewOpener)
-            siteThreeImg.removeEventListener('click', siteThreePreviewOpener)
-            siteTwoImg.removeEventListener('click', siteTwoPreviewOpener)
-            siteFourImg.removeEventListener('click', siteFourPreviewOpener)
-            siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
-            siteSixImg.removeEventListener('click', siteSixPreviewOpener)
-            siteSixPreview.style.display = 'flex'
-            openAnimation()
-            fullSiteBookshelf.addEventListener('click', siteSixPreviewCloser)
-        }
-
-        siteOneImg.addEventListener('click', siteOnePreviewOpener)
-        siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
-        siteThreeImg.addEventListener('click', siteThreePreviewOpener)
-        siteFourImg.addEventListener('click', siteFourPreviewOpener)
-        siteFiveImg.addEventListener('click', siteFivePreviewOpener)
-        siteSixImg.addEventListener('click', siteSixPreviewOpener)
-    </script>
+    <script src="./js/script.js"></script>
 
 </body>
 </html>
