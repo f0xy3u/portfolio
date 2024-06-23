@@ -143,20 +143,26 @@ body {
 }
 
 .website {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(160px, 500px));
+    gap: 25px;
     position: relative;
 }
 
+@media screen and (max-width: 40.5em) {
+    .website {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        align-content: center;
+        position: relative;
+    }
+}
+
 .sitePrewiev {
-    height: 130px;
-    width: 250px;
+    max-width: 100%;
     border-radius: 20px;
-    padding: 5px;
-    margin: 15px;
 }
 
 .sitePrewiev:hover {

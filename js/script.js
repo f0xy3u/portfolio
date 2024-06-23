@@ -6,6 +6,7 @@ const siteFourImg = document.querySelector('.siteFourImg')
 const siteFiveImg = document.querySelector('.siteFiveImg')
 const siteSixImg = document.querySelector('.siteSixImg')
 const siteSevenImg = document.querySelector('.siteSevenImg')
+const siteEightImg = document.querySelector('.siteEightImg')
 const siteOnePreview = document.querySelector('.siteOne')
 const siteTwoPreview = document.querySelector('.siteTwo')
 const siteThreePreview = document.querySelector('.siteThree')
@@ -13,6 +14,7 @@ const siteFourPreview = document.querySelector('.siteFour')
 const siteFivePreview = document.querySelector('.siteFive')
 const siteSixPreview = document.querySelector('.siteSix')
 const siteSevenPreview = document.querySelector('.siteSeven')
+const siteEightPreview = document.querySelector('.siteEight')
 const sitePreview = document.querySelector(`.fullSitePreview`)
 const body = document.querySelector('body')
 
@@ -57,6 +59,7 @@ function sitePreviewOpener(siteID) {
     siteFiveImg.removeEventListener('click', siteFivePreviewOpener)
     siteSixImg.removeEventListener('click', siteSixPreviewOpener)
     siteSevenImg.removeEventListener('click', siteSevenPreviewOpener)
+    siteEightImg.removeEventListener('click', siteEightPreviewOpener)
     sitePreview.style.display = 'flex'
 
     openAnimation()
@@ -88,6 +91,10 @@ function sitePreviewOpener(siteID) {
     if (siteID == 7) {
         siteSevenPreview.style.display = 'flex'
         body.addEventListener('click', siteSevenPreviewCloser)
+    }
+    if (siteID == 8) {
+        siteEightPreview.style.display = 'flex'
+        body.addEventListener('click', siteEightPreviewCloser)
     }
 }
 
@@ -156,6 +163,15 @@ function siteSevenPreviewOpener(e) {
     sitePreviewOpener(7)
 }
 
+function siteEightPreviewCloser() {
+    sitePreviewCloser(8) 
+}
+
+function siteEightPreviewOpener(e) {
+    e.stopPropagation()
+    sitePreviewOpener(8)
+}
+
 function sitePreviewCloser(siteID) {
     siteOneImg.addEventListener('click', siteOnePreviewOpener)
     siteTwoImg.addEventListener('click', siteTwoPreviewOpener)
@@ -164,6 +180,7 @@ function sitePreviewCloser(siteID) {
     siteFiveImg.addEventListener('click', siteFivePreviewOpener)
     siteSixImg.addEventListener('click', siteSixPreviewOpener)
     siteSevenImg.addEventListener('click', siteSevenPreviewOpener)
+    siteEightImg.addEventListener('click', siteEightPreviewOpener)
     if (siteID == 1) {
         closeAnimation(1)
         setTimeout(()=>{
@@ -206,6 +223,12 @@ function sitePreviewCloser(siteID) {
             siteSevenPreview.style.display = 'none'
             body.removeEventListener('click', siteSevenPreviewCloser)}, 500)
     }
+    if (siteID == 8) {
+        closeAnimation(8)
+        setTimeout(()=>{
+            siteEightPreview.style.display = 'none'
+            body.removeEventListener('click', siteEightPreviewCloser)}, 500)
+    }
 }
 
 siteOneImg.addEventListener('click', siteOnePreviewOpener)
@@ -215,3 +238,4 @@ siteFourImg.addEventListener('click', siteFourPreviewOpener)
 siteFiveImg.addEventListener('click', siteFivePreviewOpener)
 siteSixImg.addEventListener('click', siteSixPreviewOpener)
 siteSevenImg.addEventListener('click', siteSevenPreviewOpener)
+siteEightImg.addEventListener('click', siteEightPreviewOpener)
